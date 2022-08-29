@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -337,8 +337,7 @@ namespace glTFLoader
         {
             string fileData = SerializeModel(model);
 
-            // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/IO/StreamWriter.cs,93
-            using (var ts = new StreamWriter(stream, null, -1, leaveOpen: true))
+            using (var ts = new StreamWriter(stream, leaveOpen: true))
             {
                 ts.Write(fileData);
             }
